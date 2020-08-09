@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import PersonComponent from './components/PersonList/PersonComponent.js';
+import UserComponent from './components/UserList/UserComponent.js';
+import UserAdd from './components/UserAdd/UserAdd.js';
 
 function App() {
-  // Pass props with function to call api and with data
 
   return (
-      <PersonComponent></PersonComponent>
+      <UserAdd></UserAdd>
   );
 
 }
