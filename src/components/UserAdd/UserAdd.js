@@ -5,7 +5,8 @@ import TextField from '@material-ui/core/TextField';
 
 import './UserAdd.css';
 
-const UserAdd = ({ values, handleChange, handleSubmit, goBackToList }) => {
+const UserAdd = ({ values, handleChange, handleSubmit, goBackToList, errors }) => {
+    console.log(errors);
     return (
         <div className="main-container">
             <div className="form-container">
@@ -16,17 +17,20 @@ const UserAdd = ({ values, handleChange, handleSubmit, goBackToList }) => {
                         </Grid>
                         <Grid item xs={6}>
                             <TextField id="name" name="name" label="Name" placeholder="Name" fullWidth value={values.name}
-                                InputLabelProps={{ shrink: true }} onChange={handleChange}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.name && errors.name } 
+                                helperText={errors.name ? errors.name : ""}
                             />
                         </Grid>
                         <Grid item xs={6}>
                             <TextField id="lastName" name="lastName" label="Last Name" placeholder="Last Name" fullWidth 
-                            value={values.lastName} InputLabelProps={{ shrink: true }} onChange={handleChange}
+                            value={values.lastName} InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.lastName} 
+                            helperText={errors.lastName}
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <TextField id="phone" name="phone" label="Phone" placeholder="Phone" fullWidth value={values.phone}
-                                InputLabelProps={{ shrink: true }} onChange={handleChange}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.phone} 
+                                helperText={errors.phone}
                             />
                         </Grid>
                         <Grid item xs={4}>
@@ -41,12 +45,14 @@ const UserAdd = ({ values, handleChange, handleSubmit, goBackToList }) => {
                         </Grid>
                         <Grid item xs={4}>
                             <TextField id="city" name="city" label="City" placeholder="City" fullWidth value={values.city}
-                                InputLabelProps={{ shrink: true }} onChange={handleChange}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.city} 
+                                helperText={errors.city}
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <TextField id="email" name="email" label="Email" placeholder="Email" fullWidth value={values.email}
-                                InputLabelProps={{ shrink: true }} onChange={handleChange}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.email} 
+                                helperText={errors.email}
                             />
                         </Grid>
                     </Grid>
