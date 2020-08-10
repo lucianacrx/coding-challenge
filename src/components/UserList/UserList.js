@@ -20,6 +20,12 @@ const StyledTableCell = withStyles((theme) => ({
     color: theme.palette.common.white,
   }
 }))(TableCell);
+const StyledTable = withStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.common.white,
+    marginBottom: '40px'
+  }
+}))(Table);
 
 const UserList = ({ users, pagination, goToAddForm }) => {
     return (
@@ -31,7 +37,7 @@ const UserList = ({ users, pagination, goToAddForm }) => {
           </Button>
         </div>
         <TableContainer>
-          <Table>
+          <StyledTable>
             <TableHead>
               <TableRow>
                 <StyledTableCell>Username</StyledTableCell>
@@ -45,8 +51,8 @@ const UserList = ({ users, pagination, goToAddForm }) => {
             <TableBody>
               {users && users.map((user) => (
                 <TableRow key={user.email}>
-                  <TableCell>{user.name.first}.{user.name.last}{user.dob.age}</TableCell>
-                  <TableCell >{user.name.first}</TableCell>
+                  <TableCell style={ {textTransform: 'lowercase'} }>{user.name.first}.{user.name.last}{user.dob.age}</TableCell>
+                  <TableCell>{user.name.first}</TableCell>
                   <TableCell>{user.name.last}</TableCell>
                   <TableCell>{user.phone}</TableCell>
                   <TableCell>{user.location.street.number} {user.location.street.name}, {user.location.city}</TableCell>
@@ -71,7 +77,7 @@ const UserList = ({ users, pagination, goToAddForm }) => {
                 
             </TableRow>
           </TableFooter>
-          </Table>
+          </StyledTable>
         </TableContainer>
       </Container>
     );
