@@ -5,14 +5,3 @@
     align-items: center;
     margin: 20px 0;
 }
-
-.table-container {
-    background-color: white;
-    width: 60%;
-    margin: auto;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}

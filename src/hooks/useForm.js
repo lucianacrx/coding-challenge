@@ -15,13 +15,12 @@ const useForm = ({ initialValues }, onSubmit, validate) => {
             event.preventDefault();
         }
             
-        setErrors(validate(values));
+        let formErrors = validate(values);
+        setErrors(formErrors);
 
-        if (isObjectEmpty(errors)) {
+        if (isObjectEmpty(formErrors)) {
             onSubmit(values);
         }
-
-        setValues(initialValues);
     }
 
     return { values, setValues, handleChange, handleSubmit, errors }

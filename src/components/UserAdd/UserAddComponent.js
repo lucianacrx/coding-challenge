@@ -21,7 +21,7 @@ const UserAddComponent = () => {
     const [open, setOpen] = useState(false);
 
     const onSubmit = () => {
-        setOpen(true);
+        //setOpen(true);
     }
 
     const history = useHistory();
@@ -38,7 +38,7 @@ const UserAddComponent = () => {
             goBackToList={goBackToList} errors={errors}></UserAdd>
         <Snackbar
             anchorOrigin={ { vertical: 'top', horizontal: 'right'} }
-            open={open}
+            open={open} autoHideDuration={6000} onClose={() => setOpen(false)}
             message="User created successfully. Go back to User List."
         />
         </React.Fragment>
