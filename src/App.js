@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import UserComponent from './components/UserList/UserComponent.js';
-import UserAdd from './components/UserAdd/UserAdd.js';
+import UserListComponent from './components/UserList/UserListComponent.js';
+import UserAddComponent from './components/UserAdd/UserAddComponent.js';
 
 function App() {
 
   return (
-      <UserAdd></UserAdd>
+      <UserAddComponent></UserAddComponent>
   );
 
 }

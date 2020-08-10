@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import usePagination from '../../hooks/usePagination.js';
 import PersonList from './UserList.js';
 
-const UserComponent = () => {
+const UserListComponent = () => {
     const [users, setUsers] = useState([]);
     const setUsersData = (users) => setUsers(users);
     const pagination = usePagination(15, setUsersData);
@@ -16,4 +16,4 @@ const UserComponent = () => {
     );
 }
 
-export default UserComponent;
+export default UserListComponent;

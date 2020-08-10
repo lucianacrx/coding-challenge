@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 import './UserAdd.css';
 
-const UserAdd = () => {
+const UserAdd = ({ values, handleChange, handleSubmit }) => {
     return (
         <div className="main-container">
             <div className="form-container">
@@ -14,39 +14,39 @@ const UserAdd = () => {
                         <Grid item xs={12}>
                             <h1>User Form</h1>
                         </Grid>
-                        <Grid item xs={12}>
-                            <TextField id="name" label="Name" placeholder="Name" fullWidth 
-                                InputLabelProps={{ shrink: true }}
+                        <Grid item xs={6}>
+                            <TextField id="name" name="name" label="Name" placeholder="Name" fullWidth value={values.name}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange}
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <TextField id="last-name" name="last-name" label="Last Name" placeholder="Last Name" fullWidth 
+                            value={values.lastName} InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <TextField id="last-name" label="Last Name" placeholder="Last Name" fullWidth 
-                                InputLabelProps={{ shrink: true }}
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField id="phone" label="Phone" placeholder="Phone" fullWidth 
-                                InputLabelProps={{ shrink: true }}
+                            <TextField id="phone" name="phone" label="Phone" placeholder="Phone" fullWidth value={values.phone}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
                         <Grid item xs={4}>
-                            <TextField id="street-number" label="Street Number" placeholder="Street Number" fullWidth 
-                                InputLabelProps={{ shrink: true }}
+                            <TextField id="street-number" name="street-number" label="Street Number" placeholder="Street Number" fullWidth 
+                                value={values.streetNumber} InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
                         <Grid item xs={4}>
-                            <TextField id="street-name" label="Street Name" placeholder="Street Name" fullWidth 
-                                InputLabelProps={{ shrink: true }}
+                            <TextField id="street-name" name="street-name" label="Street Name" placeholder="Street Name" fullWidth 
+                                value={values.streetName} InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
                         <Grid item xs={4}>
-                            <TextField id="city" label="City" placeholder="City" fullWidth 
-                                InputLabelProps={{ shrink: true }}
+                            <TextField id="city" name="city" label="City" placeholder="City" fullWidth value={values.city}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <TextField id="email" label="Email" placeholder="Email" fullWidth 
-                                InputLabelProps={{ shrink: true }}
+                            <TextField id="email" name="email" label="Email" placeholder="Email" fullWidth value={values.email}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
                     </Grid>
@@ -57,7 +57,7 @@ const UserAdd = () => {
                             </Button>
                         </Grid>
                         <Grid item xs={1}>
-                            <Button variant="contained" color="primary">
+                            <Button variant="contained" color="primary" onClick={handleSubmit}>
                                 Submit
                             </Button>
                         </Grid>

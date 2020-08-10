@@ -21,7 +21,7 @@ const StyledTableCell = withStyles((theme) => ({
   }
 }))(TableCell);
 
-const UserList = (props) => {
+const UserList = ({ users, pagination }) => {
     return (
       <Container>
         <div className="header-container">
@@ -43,7 +43,7 @@ const UserList = (props) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {props.users && props.users.map((user) => (
+              {users && users.map((user) => (
                 <TableRow key={user.email}>
                   <TableCell>{user.name.first}.{user.name.last}{user.dob.age}</TableCell>
                   <TableCell >{user.name.first}</TableCell>
@@ -57,13 +57,13 @@ const UserList = (props) => {
             <TableFooter>
             <TableRow>
                 {
-                    props.pagination && (
+                    pagination && (
                         <TablePagination
-                            count={props.pagination.count}
-                            page={props.pagination.page}
-                            onChangePage={props.pagination.handleChangePage}
-                            labelDisplayedRows={props.pagination.defaultLabelDisplayedRows}
-                            rowsPerPage={props.pagination.rowsPerPage}
+                            count={pagination.count}
+                            page={pagination.page}
+                            onChangePage={pagination.handleChangePage}
+                            labelDisplayedRows={pagination.defaultLabelDisplayedRows}
+                            rowsPerPage={pagination.rowsPerPage}
                             rowsPerPageOptions={[]}
                         />
                     )
