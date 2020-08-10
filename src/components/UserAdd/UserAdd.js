@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 import './UserAdd.css';
 
-const UserAdd = ({ values, handleChange, handleSubmit }) => {
+const UserAdd = ({ values, handleChange, handleSubmit, goBackToList }) => {
     return (
         <div className="main-container">
             <div className="form-container">
@@ -20,7 +20,7 @@ const UserAdd = ({ values, handleChange, handleSubmit }) => {
                             />
                         </Grid>
                         <Grid item xs={6}>
-                            <TextField id="last-name" name="last-name" label="Last Name" placeholder="Last Name" fullWidth 
+                            <TextField id="lastName" name="lastName" label="Last Name" placeholder="Last Name" fullWidth 
                             value={values.lastName} InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
@@ -30,12 +30,12 @@ const UserAdd = ({ values, handleChange, handleSubmit }) => {
                             />
                         </Grid>
                         <Grid item xs={4}>
-                            <TextField id="street-number" name="street-number" label="Street Number" placeholder="Street Number" fullWidth 
+                            <TextField id="streetNumber" name="streetNumber" label="Street Number" placeholder="Street Number" fullWidth 
                                 value={values.streetNumber} InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
                         <Grid item xs={4}>
-                            <TextField id="street-name" name="street-name" label="Street Name" placeholder="Street Name" fullWidth 
+                            <TextField id="streetName" name="streetName" label="Street Name" placeholder="Street Name" fullWidth 
                                 value={values.streetName} InputLabelProps={{ shrink: true }} onChange={handleChange}
                             />
                         </Grid>
@@ -52,7 +52,7 @@ const UserAdd = ({ values, handleChange, handleSubmit }) => {
                     </Grid>
                     <Grid container direction="row" justify="space-between" alignItems="flex-end" className="button-row">
                         <Grid item xs={2}>
-                            <Button variant="contained" color="primary">
+                            <Button variant="contained" color="primary" onClick={goBackToList}>
                                 Back to list
                             </Button>
                         </Grid>

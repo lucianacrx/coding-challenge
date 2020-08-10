@@ -21,12 +21,12 @@ const StyledTableCell = withStyles((theme) => ({
   }
 }))(TableCell);
 
-const UserList = ({ users, pagination }) => {
+const UserList = ({ users, pagination, goToAddForm }) => {
     return (
       <Container>
         <div className="header-container">
           <h1>User List</h1>
-          <Button variant="contained" color="primary" disableElevation startIcon={<AddIcon />}>
+          <Button variant="contained" color="primary" disableElevation startIcon={<AddIcon />} onClick={goToAddForm}>
             Add User
           </Button>
         </div>
