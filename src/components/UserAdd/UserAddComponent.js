@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from "react-router-dom";
 import Snackbar from '@material-ui/core/Snackbar';
 
@@ -18,10 +18,8 @@ const UserAddComponent = () => {
         email: ''
     };
 
-    const [open, setOpen] = useState(false);
-
     const onSubmit = () => {
-        //setOpen(true);
+        // TODO - Here goes any aditional function we want to pass to useForm hook
     }
 
     const history = useHistory();
@@ -30,7 +28,7 @@ const UserAddComponent = () => {
         history.push("/");
     }
 
-    const { values, handleChange, handleSubmit, errors } = useForm({initialValues}, onSubmit, validate);
+    const { values, handleChange, handleSubmit, errors, submitted, setSubmitted } = useForm({initialValues}, onSubmit, validate);
 
     return (
         <React.Fragment>
@@ -38,7 +36,7 @@ const UserAddComponent = () => {
             goBackToList={goBackToList} errors={errors}></UserAdd>
         <Snackbar
             anchorOrigin={ { vertical: 'top', horizontal: 'right'} }
-            open={open} autoHideDuration={6000} onClose={() => setOpen(false)}
+            open={submitted} autoHideDuration={3000} onClose={() => setSubmitted(false)}
             message="User created successfully. Go back to User List."
         />
         </React.Fragment>

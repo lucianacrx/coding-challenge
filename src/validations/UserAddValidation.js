@@ -11,9 +11,7 @@ export default function validate(values) {
         errors.lastName	 = 'Last name is required';
     }
 
-    if (!checkHasValue(values.phone)) {
-        errors.phone = 'Phone is required';
-    } else if (!checkPhonePattern(values.phone)) {
+    if (!checkHasValue(values.phone) || !checkPhonePattern(values.phone)) {
         errors.phone = 'Invalid phone number';
     }
 
@@ -21,9 +19,7 @@ export default function validate(values) {
         errors.city = 'City is required';
     }
 
-    if (!checkHasValue(values.email)) {
-        errors.email = 'Email is required';
-    } else if (!checkEmailPattern(values.email)) {
+    if (!checkHasValue(values.email) || !checkEmailPattern(values.email)) {
         errors.email = 'Invalid email';
     }
 

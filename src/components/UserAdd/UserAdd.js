@@ -29,8 +29,9 @@ const UserAdd = ({ values, handleChange, handleSubmit, goBackToList, errors }) =
                         </Grid>
                         <Grid item xs={12}>
                             <TextField id="phone" name="phone" label="Phone" placeholder="Phone" fullWidth value={values.phone}
-                                InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.phone && values.phone === "" } 
-                                helperText={errors.phone && values.phone === "" ? errors.phone : "" }
+                                InputLabelProps={{ shrink: true }} onChange={handleChange} type="tel"
+                                error={ errors.phone !== undefined && errors.phone !== "" } 
+                                helperText={ errors.phone ? errors.phone : "" } 
                             />
                         </Grid>
                         <Grid item xs={4}>
@@ -46,13 +47,14 @@ const UserAdd = ({ values, handleChange, handleSubmit, goBackToList, errors }) =
                         <Grid item xs={4}>
                             <TextField id="city" name="city" label="City" placeholder="City" fullWidth value={values.city}
                                 InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.city && values.city === "" } 
-                                helperText={errors.city && values.city === "" ? errors.phone : "" }
+                                helperText={errors.city && values.city === "" ? errors.city : "" }
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <TextField id="email" name="email" label="Email" placeholder="Email" fullWidth value={values.email}
-                                InputLabelProps={{ shrink: true }} onChange={handleChange} error={errors.email && values.email === "" } 
-                                helperText={errors.email && values.email === "" ? errors.email : ""}
+                                InputLabelProps={{ shrink: true }} onChange={handleChange} type="email"
+                                error={ errors.email !== undefined && errors.email !== "" } 
+                                helperText={errors.email ? errors.email : ""}
                             />
                         </Grid>
                     </Grid>
